@@ -1,0 +1,12 @@
+
+<ul class="page-num clearfix">
+      <li class="page-left" :click=" prev "><img src="/assets/img/arrow-up-2x.png" alt="" width="16px" style="transform: rotate(-270deg);" ></li>
+      <li  ms-for=" (index , item ) in pages "  :click= " pageJmp(item.page) "  :class=" item.current ? 'page-n cur' : 'page-n' "> {{ item.page }} </li>
+      <li class="page-right" :click = " next "><img src="/assets/img/arrow-up-2x.png" alt="" width="16px" style="transform: rotate(270deg);"  ></li>
+      <li>
+         <span class="turn">跳转至：</span>
+         <input type="text" class="no-page" ms-duplex="jmpPage" >
+         <span class="page">页</span>
+         <a href="javascript:;" class="sure" :click="pageJmp(jmpPage,'jmp')">确定</a>
+     </li>
+</ul> 

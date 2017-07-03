@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dialog</title>
+    <script src="../avalon2.2.5.js"></script>
+    <script src="/avalon2ui.bundle.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="../main.css">
+</head>
+
+<body>
+    <div ms-controller="ms-dialog-demo">
+        <a href="javascript:;" ms-click="send('demo')">rateMe1</a>
+        <br>
+        <a href="javascript:;" ms-click="send('demo2')">rateMe2</a>
+
+        <ms-dialog 
+        	:visible="ModalName == 'demo'" 
+        	:widget="{
+                modalVm:$id,
+                modalSelfClass:'demo-dialog',
+                modalw:400,
+                }">
+            <h1 slot="header">
+            		hello，我是郝小军
+            </h1>
+            <div slot="body">
+                <p class="delete-tips">你确定删除吗？</p>
+            </div>
+            <div slot="footer">
+                <div class="bottom-btn">
+                    <button class="btn btn-sure" :click="sureDelete">确定</button>
+                    <button class="btn btn-cacel" :click="closeModal">取消</button>
+                </div>
+            </div>
+        </ms-dialog>
+
+
+        <ms-dialog 
+        	:visible="ModalName == 'demo2'" 
+        	:widget="{
+                modalVm:$id,
+                modalSelfClass:'demo-dialog2',
+                modalw:600,
+                modalh:400,
+                }">
+            <h1 slot="header">
+            		hello，我是超人
+            </h1>
+            <div slot="body">
+                <p class="delete-tips">你确定删除吗？</p>
+            </div>
+            <div slot="footer">
+                <div class="bottom-btn">
+                    <button class="btn btn-sure" :click="sureDelete">确定</button>
+                    <button class="btn btn-cacel" :click="closeModal">取消</button>
+                </div>
+            </div>
+        </ms-dialog>
+    </div>
+</body>
+
+</html>

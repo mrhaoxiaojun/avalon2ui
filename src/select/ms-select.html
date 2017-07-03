@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select</title>
+    <script src="../avalon2.2.5.js"></script>
+    <script src="/avalon2ui.bundle.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="../main.css">
+</head>
+
+<body>
+    <div ms-controller="ms-select-demo">
+        
+        <!--
+         * @param {String} selectVm controller
+         * @param {String} selectSelfClass 自定义class
+         * @param {Number} selectw 自定义宽度
+         * @param {Number} selecth 自定义高度
+         * @param {Array} selectData 必填，需要渲染的数据，支持[1,2,3]和[{},{}]
+         * @param {String} selectKey 传递过来的数据如果是对象数组，需要显示字段的key，来自于页面配置
+         * @param {String} selectValue 必填，最终下拉框选中的值，存放在父级元素的哪个字段里，来自于页面配置
+         * @param {String} selectCurrennt 最终下拉框选中的值,组件内部显示,也可以作为默认选项，在页面配置
+         * @param {Function} selectChange 选中某一项后回调的方法名字
+         -->
+        <p>
+            拥有默认选项，change回调，自定义宽高，数据类型为，数组对象：
+            <ms-select 
+                :widget="{
+                    selectVm:$id,
+                    selectSelfClass:'demo-select1',
+                    selectw:200,
+                    selecth:40,
+                    selectData:data1,
+                    selectKey:'name',
+                    selectValue:'value1',
+                    selectCurrennt:'美女如云',
+                    selectChange:'value1Change'
+                    }">
+            </ms-select>
+        </p>
+        <br>
+        <br>
+        <br>
+        <p>
+            不设置默认选项，数据类型为普通数组：
+            <ms-select 
+                :widget="{
+                    selectVm:$id,
+                    selectSelfClass:'demo-select2',
+                    selectData:data2,
+                    selectKey:'',
+                    selectValue:'value2',
+                    }">
+            </ms-select>
+        </p>
+
+    </div>
+</body>
+
+</html>

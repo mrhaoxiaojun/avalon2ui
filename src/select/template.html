@@ -1,0 +1,20 @@
+<div :class="['avalon2-select',selectSelfClass]" :css="{width:selectw}">
+    <b :click="selectDownShow = !selectDownShow" :css="{width:selectw,height:selecth}">
+        {{selectCurrennt}}
+        <i class="pull-right" :css="{height:selecth}"></i>
+    </b>
+    <ul :visible="selectDownShow && selectKey" :css="{width:selectw}">
+        <li 
+        :for="(index,elem) in selectData" 
+        :click="selectMe(elem[selectKey])"
+        :class="[(elem[selectKey] == selectCurrennt ? 'cur' : '')]"
+        >{{elem[selectKey]}}</li>
+    </ul>
+    <ul :visible="selectDownShow && !selectKey" :css="{width:selectw}">
+        <li 
+        :for="(index,elem) in selectData" 
+        :click="selectMe(elem)"
+        :class="[(elem == selectCurrennt ? 'cur' : '')]"
+        >{{elem}}</li>
+    </ul>
+</div>

@@ -1,0 +1,13 @@
+<span 
+	:class="['ck-custom', ( ck_isChecked ?  (ck_isDisabled ? 'ck-checked-disabled ': 'ck-checked')  :  (ck_isDisabled ? 'ck-disabled ': ''))]" 
+	:click="changeCheckBox(ck_value)">
+	<input 
+	type="checkbox" 
+	:duplex="ck_list" 
+	:attr="{
+		value:ck_value,
+		checked:ck_isChecked,
+		disabled:ck_isDisabled
+		}" 
+	data-duplex-changed="setCheckedList">
+</span>

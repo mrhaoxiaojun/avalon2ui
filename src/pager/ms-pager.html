@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page</title>
+    <script src="../avalon2.2.5.js"></script>
+    <script src="/avalon2ui.bundle.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="../main.css">
+</head>
+<body>
+    <div ms-controller="ms-page-demo">
+        <div class="pageN" > 
+            <span class="show-line">  
+                <span class="line-text" >显示行数：</span>
+                <select ms-duplex="showLine" class="user-ui-select">
+                    <option ms-for="option in options" >
+                        {{ option }}
+                    </option>
+                </select>
+            </span>
+            <!-- avalon 自定义标签<ms-pager ms-widget="@pageConfig" > </ms-pager> -->
+            <xmp is="ms-pager" ms-widget="@pageConfig" ></xmp>
+        </div>
+    </div>
+</body>
+
+</html>

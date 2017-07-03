@@ -1,0 +1,53 @@
+.avalon2-select {
+    display: inline-block;
+    width: 98px;
+    background: #FFFFFF;
+    color: #606068;
+    b {
+        display: block;
+        box-sizing: border-box;
+        font-weight: normal;
+        width: 98px;
+        padding-left: 8px;
+        height: 26px;
+        line-height: 26px;
+        border: 1px solid #EBEBEB;
+        border-radius: 1px;
+        cursor: pointer;
+        i {
+            width: 26px;
+            height: 26px;
+            display: inline-block;
+            background: url(/assets/img/arrow.png) no-repeat 4px 5px;
+            background-size: 16px;
+            border-left: 1px solid #EBEBEB;
+            margin-left: 0;
+        }
+    }
+    ul {
+        display: none;
+        position: absolute;
+        background: #fff;
+        width: 98px;
+        max-height: 200px;
+        overflow: auto;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+        border-radius: 1px;
+        margin-left: 1px;
+        z-index: 10;
+        li {
+            display: block;
+            width: 100%;
+            padding-left: 8px;
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+            &:hover{
+                background: #eee;
+            }
+            &.cur{
+                 background: #eee;
+            }
+        }
+    }
+}

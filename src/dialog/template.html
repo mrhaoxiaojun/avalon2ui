@@ -1,0 +1,18 @@
+<div name="modal" :class="['avalon2-modal ',modalSelfClass]"  >
+    <div class="modal-mask" >
+        <div class="modal-wrapper">
+                <div class="modal-container" ms-css="{width:modalw,height:modalh}" >
+                     <img src="/assets/img/modal-close.png" alt="" width="16px" class="modal-close" :click="closeModal">
+                    <div class="modal-header">
+                        <slot name="header"></slot>
+                    </div>
+                    <div class="modal-body">
+                        <slot name="body"></slot>
+                    </div>
+                    <div class="modal-footer">
+                        <slot name="footer"></slot>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

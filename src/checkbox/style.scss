@@ -1,0 +1,43 @@
+ .ck-custom{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 50px;
+        height: 24px;
+        background: url(/assets/img/toggle-inactive2.png) no-repeat;
+        background-size: 50px;
+        display:inline-block;
+        input{
+            display:none;
+        }
+        &.ck-checked::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0px;
+            background: url(/assets/img/toggle-active.png) no-repeat;
+            width: 50px;
+            height: 24px;
+            background-size: 50px;
+        }
+        &.ck-disabled::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0px;
+            background: url(/assets/img/toggle-inactive.png) no-repeat;
+            width: 50px;
+            height: 24px;
+            background-size: 50px;
+        }
+        &.ck-checked-disabled::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0px;
+            background: url(/assets/img/toggle-active2.png) no-repeat;
+            width: 50px;
+            height: 24px;
+            background-size: 50px;
+        }
+    }

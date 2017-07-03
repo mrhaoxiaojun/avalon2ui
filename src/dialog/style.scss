@@ -1,0 +1,68 @@
+.avalon2-modal{
+  display:none;
+   .modal-mask {
+       position: fixed;
+       z-index: 9998;
+       top: 0;
+       left: 0;
+       bottom: 0;
+       right: 0;
+       /*width: 100%;
+        height: 100%;*/
+       background-color: rgba(0, 0, 0, .3);
+       display: block;
+       overflow-x: hidden;
+       overflow-y: auto;
+   }
+   
+   .modal-wrapper {
+       /*display: table-cell;*/
+       vertical-align: middle;
+   }
+   
+   .modal-container {
+       /*width: 300px;*/
+       position: relative;
+       margin: 60px auto;
+       padding: 24px 40px 40px;
+       background-color: #fff;
+       border-radius: 2px;
+       box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+       font-family: Helvetica, Arial, sans-serif;
+   }
+   
+   .modal-header {
+       position: relative;
+   }
+   
+   .modal-header h1 {
+       font-size: 14px;
+       color: #101418;
+   }
+   
+   .modal-default-button {
+       float: right;
+   }
+   
+   .modal-enter,
+   .modal-leave-active {
+       opacity: 0;
+   }
+   
+   .modal-enter-active {
+       /*opacity: 1;*/
+       transition: opacity .5s ease;
+   }
+   
+   .modal-leave-active {
+       opacity: 0;
+       transition: opacity .5s ease .5s;
+   }
+   
+   .modal-close {
+       position: absolute;
+       top: 6px;
+       right: 8px;
+       cursor: pointer;
+   }
+}

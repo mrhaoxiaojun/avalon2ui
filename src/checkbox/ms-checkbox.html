@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page</title>
+    <script src="../avalon2.2.5.js"></script>
+    <script src="/avalon2ui.bundle.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="../main.css">
+</head>
+
+<body>
+    <div ms-controller="ms-page-demo">
+        <!-- 循环数据 -->
+        <p> 循环数据写法：</p>
+        <ms-checkbox ms-for="(index,val) in dataList" :widget="{
+                ck_vm:'ms-page-demo',
+                ck_list:ck_list, 
+                ck_value:val.value, 
+                ck_isDisabled:val.disabled
+                }"></ms-checkbox>
+        <br> checkbox，选中数组选项： {{ck_list}}
+    </div>
+    <div ms-controller="ms-page-demo2">
+        <!-- 单个数据 -->
+        <p> 单个数据写法：</p>
+        <ms-checkbox :widget="{
+            ck_vm:$id,
+            ck_list:ck_list, 
+            ck_value:'1', 
+            ck_isDisabled:false
+            }"></ms-checkbox>
+        <ms-checkbox :widget="{
+            ck_vm:$id,
+            ck_list:ck_list, 
+            ck_value:'2', 
+            ck_isDisabled:false
+            }"></ms-checkbox>
+        <ms-checkbox :widget="{
+            ck_vm:$id,
+            ck_list:ck_list, 
+            ck_value:'3', 
+            ck_isDisabled:false
+            }"></ms-checkbox>
+        <br> checkbox，选中数组选项： {{ck_list}}
+    </div>
+    <div ms-controller="ms-page-demo3">
+        <!-- 全选 -->
+        <p>全选写法：</p>
+        <ms-checkbox :widget="{
+            ck_vm:$id,
+            ck_list:ck_list, 
+            ck_value:'all',
+            }"></ms-checkbox>
+            <br>
+        <ms-checkbox ms-for="(index,val) in dataList" :widget="{
+                ck_vm:'ms-page-demo3',
+                ck_list:ck_list, 
+                ck_value:val.value, 
+                ck_isDisabled:val.disabled
+                }"></ms-checkbox>
+        <br> checkbox，选中数组选项： {{ck_list}}
+    </div>
+</body>
+
+</html>
