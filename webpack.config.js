@@ -22,6 +22,7 @@ module.exports = {
     },
     devServer: {
         contentBase: __dirname + "/src",  // New
+        port: 8090,
         inline: true //实时刷新
     },
     module:{

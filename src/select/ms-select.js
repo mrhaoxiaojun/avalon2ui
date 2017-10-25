@@ -32,11 +32,25 @@ avalon.component('ms-select', {
         selectChange:'',
         selectMe: function (value) {
             this.selectDownShow = false;
-            this.selectCurrennt = value;
-            avalon.vmodels[this.selectVm][this.selectValue] = value;
+            if (value[this.selectKey]) {
+                // 对象赋值
+                this.selectCurrennt = value[this.selectKey];
+                avalon.vmodels[this.selectVm][this.selectValue] = value[this.selectKey];
+            } else {
+                // 数组赋值
+                this.selectCurrennt = value;
+                avalon.vmodels[this.selectVm][this.selectValue] = value;
+            }
             if (avalon.vmodels[this.selectVm][this.selectChange]) {
+                // 回调方法
                 avalon.vmodels[this.selectVm][this.selectChange](value);
             }
+        },
+        blurEve: function () {
+            var that = this;
+            setTimeout(function () {
+                that.selectDownShow = false;
+            },300)
         }
     }
 });

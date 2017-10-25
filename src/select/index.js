@@ -15,5 +15,14 @@ var vm = avalon.define({
     value2: "", 
     value1Change: function (changeValue) {
         console.log(changeValue)
+    },
+    value1Change2: function (changeValue2) {
+        console.log(changeValue2)
+    },
+    change: function () {
+        var that = this;
+        setTimeout(function () {
+            that.data2=["动态1","动态02"]
+       },3000)
     }
 })

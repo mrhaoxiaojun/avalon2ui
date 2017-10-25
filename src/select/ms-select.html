@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="../main.css">
 </head>
 
-<body>
-    <div ms-controller="ms-select-demo">
+<body ms-controller="ms-select-demo" >
+    <div >
         
         <!--
          * @param {String} selectVm controller
@@ -20,29 +20,32 @@
          * @param {Number} selectw 自定义宽度
          * @param {Number} selecth 自定义高度
          * @param {Array} selectData 必填，需要渲染的数据，支持[1,2,3]和[{},{}]
+         * @param {Boolean} selectDownShow 下拉显示隐藏
          * @param {String} selectKey 传递过来的数据如果是对象数组，需要显示字段的key，来自于页面配置
          * @param {String} selectValue 必填，最终下拉框选中的值，存放在父级元素的哪个字段里，来自于页面配置
          * @param {String} selectCurrennt 最终下拉框选中的值,组件内部显示,也可以作为默认选项，在页面配置
          * @param {Function} selectChange 选中某一项后回调的方法名字
          -->
+         
         <p>
             拥有默认选项，change回调，自定义宽高，数据类型为，数组对象：
             <ms-select 
                 :widget="{
                     selectVm:$id,
                     selectSelfClass:'demo-select1',
-                    selectw:200,
-                    selecth:40,
+                    selectw:100,
+                    selecth:28,
                     selectData:data1,
                     selectKey:'name',
                     selectValue:'value1',
-                    selectCurrennt:'美女如云',
+                    selectCurrennt:'亮瞎狗眼',
                     selectChange:'value1Change'
                     }">
             </ms-select>
         </p>
         <br>
         <br>
+        <button ms-click="change">动态数据</button>
         <br>
         <p>
             不设置默认选项，数据类型为普通数组：
@@ -51,8 +54,10 @@
                     selectVm:$id,
                     selectSelfClass:'demo-select2',
                     selectData:data2,
+                    selectDownShow:true,
                     selectKey:'',
                     selectValue:'value2',
+                    selectChange:'value1Change2'
                     }">
             </ms-select>
         </p>

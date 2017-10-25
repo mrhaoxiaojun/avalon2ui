@@ -1,15 +1,23 @@
 <div :class="['avalon2-select',selectSelfClass]" :css="{width:selectw}">
-    <b :click="selectDownShow = !selectDownShow" :css="{width:selectw,height:selecth}">
+    <b  :css="{width:selectw,height:selecth}">
         {{selectCurrennt}}
         <i class="pull-right" :css="{height:selecth}"></i>
+        <input 
+            type="text" 
+            class="select-input" 
+            readonly :click="selectDownShow = !selectDownShow" 
+            :css="{width:selectw,height:selecth} " 
+            :blur="blurEve" >
     </b>
+    <!-- 传递过来是数组对象 -->
     <ul :visible="selectDownShow && selectKey" :css="{width:selectw}">
         <li 
         :for="(index,elem) in selectData" 
-        :click="selectMe(elem[selectKey])"
+        :click="selectMe(elem)"
         :class="[(elem[selectKey] == selectCurrennt ? 'cur' : '')]"
         >{{elem[selectKey]}}</li>
     </ul>
+    <!-- 传递过来是数组 -->
     <ul :visible="selectDownShow && !selectKey" :css="{width:selectw}">
         <li 
         :for="(index,elem) in selectData" 

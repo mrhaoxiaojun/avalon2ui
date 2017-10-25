@@ -8,45 +8,64 @@
         box-sizing: border-box;
         font-weight: normal;
         width: 98px;
-        padding-left: 8px;
+        padding-left: 9px;
         height: 26px;
         line-height: 26px;
         border: 1px solid #EBEBEB;
         border-radius: 1px;
         cursor: pointer;
+        position: relative;
+        overflow: hidden;
         i {
-            width: 26px;
+            width: 20px;
             height: 26px;
             display: inline-block;
-            background: url(/assets/img/arrow.png) no-repeat 4px 5px;
+            background: url(/assets/img/arrow.png) no-repeat 2px 5px;
             background-size: 16px;
             border-left: 1px solid #EBEBEB;
             margin-left: 0;
         }
+        .select-input{
+            position: absolute;
+            left: -1px;
+            top: 0;
+            right: 0;
+            border-bottom: 0;
+            z-index: 999;
+            height: 26px;
+            cursor: pointer;
+            background-color:transparent;
+        }
     }
     ul {
-        display: none;
+        // display: none;
         position: absolute;
+        box-sizing: border-box;
         background: #fff;
         width: 98px;
         max-height: 200px;
         overflow: auto;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+        border: 1px solid #EBEBEB;
+        border-top:0;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
         border-radius: 1px;
-        margin-left: 1px;
         z-index: 10;
         li {
             display: block;
             width: 100%;
-            padding-left: 8px;
-            height: 30px;
-            line-height: 30px;
+            padding-left: 9px;
+            height: 24px;
+            line-height: 24px;
             cursor: pointer;
             &:hover{
-                background: #eee;
+                background: #50B4FF;
+                border-radius: 1px;
+                color:#fff;
             }
             &.cur{
-                 background: #eee;
+                background: #50B4FF;
+                border-radius: 1px;
+                color:#fff;
             }
         }
     }

@@ -857,11 +857,25 @@ avalon.component('ms-select', {
         selectChange:'',
         selectMe: function (value) {
             this.selectDownShow = false;
-            this.selectCurrennt = value;
-            avalon.vmodels[this.selectVm][this.selectValue] = value;
+            if (value[this.selectKey]) {
+                // 对象赋值
+                this.selectCurrennt = value[this.selectKey];
+                avalon.vmodels[this.selectVm][this.selectValue] = value[this.selectKey];
+            } else {
+                // 数组赋值
+                this.selectCurrennt = value;
+                avalon.vmodels[this.selectVm][this.selectValue] = value;
+            }
             if (avalon.vmodels[this.selectVm][this.selectChange]) {
+                // 回调方法
                 avalon.vmodels[this.selectVm][this.selectChange](value);
             }
+        },
+        blurEve: function () {
+            var that = this;
+            setTimeout(function () {
+                that.selectDownShow = false;
+            },300)
         }
     }
 });
@@ -918,7 +932,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, ".avalon2-select {\n  display: inline-block;\n  width: 98px;\n  background: #FFFFFF;\n  color: #606068; }\n  .avalon2-select b {\n    display: block;\n    box-sizing: border-box;\n    font-weight: normal;\n    width: 98px;\n    padding-left: 8px;\n    height: 26px;\n    line-height: 26px;\n    border: 1px solid #EBEBEB;\n    border-radius: 1px;\n    cursor: pointer; }\n    .avalon2-select b i {\n      width: 26px;\n      height: 26px;\n      display: inline-block;\n      background: url(/assets/img/arrow.png) no-repeat 4px 5px;\n      background-size: 16px;\n      border-left: 1px solid #EBEBEB;\n      margin-left: 0; }\n  .avalon2-select ul {\n    display: none;\n    position: absolute;\n    background: #fff;\n    width: 98px;\n    max-height: 200px;\n    overflow: auto;\n    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);\n    border-radius: 1px;\n    margin-left: 1px;\n    z-index: 10; }\n    .avalon2-select ul li {\n      display: block;\n      width: 100%;\n      padding-left: 8px;\n      height: 30px;\n      line-height: 30px;\n      cursor: pointer; }\n      .avalon2-select ul li:hover {\n        background: #eee; }\n      .avalon2-select ul li.cur {\n        background: #eee; }\n", ""]);
+exports.push([module.i, ".avalon2-select {\n  display: inline-block;\n  width: 98px;\n  background: #FFFFFF;\n  color: #606068; }\n  .avalon2-select b {\n    display: block;\n    box-sizing: border-box;\n    font-weight: normal;\n    width: 98px;\n    padding-left: 9px;\n    height: 26px;\n    line-height: 26px;\n    border: 1px solid #EBEBEB;\n    border-radius: 1px;\n    cursor: pointer;\n    position: relative;\n    overflow: hidden; }\n    .avalon2-select b i {\n      width: 20px;\n      height: 26px;\n      display: inline-block;\n      background: url(/assets/img/arrow.png) no-repeat 2px 5px;\n      background-size: 16px;\n      border-left: 1px solid #EBEBEB;\n      margin-left: 0; }\n    .avalon2-select b .select-input {\n      position: absolute;\n      left: -1px;\n      top: 0;\n      right: 0;\n      border-bottom: 0;\n      z-index: 999;\n      height: 26px;\n      cursor: pointer;\n      background-color: transparent; }\n  .avalon2-select ul {\n    position: absolute;\n    box-sizing: border-box;\n    background: #fff;\n    width: 98px;\n    max-height: 200px;\n    overflow: auto;\n    border: 1px solid #EBEBEB;\n    border-top: 0;\n    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);\n    border-radius: 1px;\n    z-index: 10; }\n    .avalon2-select ul li {\n      display: block;\n      width: 100%;\n      padding-left: 9px;\n      height: 24px;\n      line-height: 24px;\n      cursor: pointer; }\n      .avalon2-select ul li:hover {\n        background: #50B4FF;\n        border-radius: 1px;\n        color: #fff; }\n      .avalon2-select ul li.cur {\n        background: #50B4FF;\n        border-radius: 1px;\n        color: #fff; }\n", ""]);
 
 // exports
 
@@ -1069,7 +1083,7 @@ module.exports = "\r\n<ul class=\"page-num clearfix\">\r\n      <li class=\"page
 /* 17 */
 /***/ (function(module, exports) {
 
-module.exports = "<div :class=\"['avalon2-select',selectSelfClass]\" :css=\"{width:selectw}\">\r\n    <b :click=\"selectDownShow = !selectDownShow\" :css=\"{width:selectw,height:selecth}\">\r\n        {{selectCurrennt}}\r\n        <i class=\"pull-right\" :css=\"{height:selecth}\"></i>\r\n    </b>\r\n    <ul :visible=\"selectDownShow && selectKey\" :css=\"{width:selectw}\">\r\n        <li \r\n        :for=\"(index,elem) in selectData\" \r\n        :click=\"selectMe(elem[selectKey])\"\r\n        :class=\"[(elem[selectKey] == selectCurrennt ? 'cur' : '')]\"\r\n        >{{elem[selectKey]}}</li>\r\n    </ul>\r\n    <ul :visible=\"selectDownShow && !selectKey\" :css=\"{width:selectw}\">\r\n        <li \r\n        :for=\"(index,elem) in selectData\" \r\n        :click=\"selectMe(elem)\"\r\n        :class=\"[(elem == selectCurrennt ? 'cur' : '')]\"\r\n        >{{elem}}</li>\r\n    </ul>\r\n</div>\r\n";
+module.exports = "<div :class=\"['avalon2-select',selectSelfClass]\" :css=\"{width:selectw}\">\r\n    <b  :css=\"{width:selectw,height:selecth}\">\r\n        {{selectCurrennt}}\r\n        <i class=\"pull-right\" :css=\"{height:selecth}\"></i>\r\n        <input \r\n            type=\"text\" \r\n            class=\"select-input\" \r\n            readonly :click=\"selectDownShow = !selectDownShow\" \r\n            :css=\"{width:selectw,height:selecth} \" \r\n            :blur=\"blurEve\" >\r\n    </b>\r\n    <!-- 传递过来是数组对象 -->\r\n    <ul :visible=\"selectDownShow && selectKey\" :css=\"{width:selectw}\">\r\n        <li \r\n        :for=\"(index,elem) in selectData\" \r\n        :click=\"selectMe(elem)\"\r\n        :class=\"[(elem[selectKey] == selectCurrennt ? 'cur' : '')]\"\r\n        >{{elem[selectKey]}}</li>\r\n    </ul>\r\n    <!-- 传递过来是数组 -->\r\n    <ul :visible=\"selectDownShow && !selectKey\" :css=\"{width:selectw}\">\r\n        <li \r\n        :for=\"(index,elem) in selectData\" \r\n        :click=\"selectMe(elem)\"\r\n        :class=\"[(elem == selectCurrennt ? 'cur' : '')]\"\r\n        >{{elem}}</li>\r\n    </ul>\r\n</div>\r\n";
 
 /***/ }),
 /* 18 */
