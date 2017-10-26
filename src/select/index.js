@@ -11,7 +11,7 @@ var vm = avalon.define({
         }
     ],
     value1:"美女如云",
-    data2: ["亲，在吗","我的快递"],
+    data2: ["亲，在吗","我的快递我的快递我的快递"],
     value2: "", 
     value1Change: function (changeValue) {
         console.log(changeValue)

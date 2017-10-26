@@ -1,7 +1,11 @@
 <div :class="['avalon2-select',selectSelfClass]" :css="{width:selectw}">
     <b  :css="{width:selectw,height:selecth}">
-        {{selectCurrennt}}
-        <i class="pull-right" :css="{height:selecth}"></i>
+        <span class="text pull-left">
+            {{selectCurrennt}}
+        </span>
+        <span class="jiao-wrap pull-right" :css="{height:selecth}">
+            <i :class="[( selectDownShow ? 'down' : '')]" ></i>
+        </span>
         <input 
             type="text" 
             class="select-input" 

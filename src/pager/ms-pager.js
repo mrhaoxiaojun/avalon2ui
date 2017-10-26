@@ -104,7 +104,7 @@ avalon.component('ms-pager', {
                         current: false
                     })
                 } else {
-                    for (let i = 0; i < 3; i++) {
+                    for (var i = 0; i < 3; i++) {
                         ary.push({
                             page: i + 1,
                             current: false
@@ -114,7 +114,7 @@ avalon.component('ms-pager', {
                         page: '...',
                         tag: true
                     })
-                    for (let i = this.totalPage - 3; i < this.totalPage; i++) {
+                    for (var i = this.totalPage - 3; i < this.totalPage; i++) {
                         if (this.page == i + 1) {
                             ary.push({
                                 page: i + 1,
@@ -150,7 +150,7 @@ avalon.component('ms-pager', {
         },
         pageJmp: function (text, flag) {
             if (flag == "jmp") {
-                let reg = /^\d+$/;
+                var reg = /^\d+$/;
                 if (reg.test(text)) {
                     if (Number(text) > this.totalPage) {
                         alert("请输入小于总页码的页数");

@@ -4,7 +4,7 @@
     background: #FFFFFF;
     color: #606068;
     b {
-        display: block;
+        display: flex;
         box-sizing: border-box;
         font-weight: normal;
         width: 98px;
@@ -16,14 +16,33 @@
         cursor: pointer;
         position: relative;
         overflow: hidden;
-        i {
-            width: 20px;
-            height: 26px;
-            display: inline-block;
-            background: url(/assets/img/arrow.png) no-repeat 2px 5px;
-            background-size: 16px;
+        .text{
+            flex:1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .jiao-wrap{
             border-left: 1px solid #EBEBEB;
-            margin-left: 0;
+            padding-left:6px;
+            padding-right:6px;
+            box-sizing: border-box;
+            width:21px;
+            
+            i {
+                display: inline-block;
+                position: relative;
+                top: -2px;
+                width: 8px;
+                height: 4px;
+                background: url(/assets/img/avalon-arrow-down.png) no-repeat;
+                background-size: 8px;
+                margin-left: 0;
+                &.down{
+                    background: url(/assets/img/avalon-arrow-up.png) no-repeat;
+                    background-size: 8px;
+                }
+            }
         }
         .select-input{
             position: absolute;
@@ -52,10 +71,14 @@
         z-index: 10;
         li {
             display: block;
+            box-sizing: border-box;
             width: 100%;
             padding-left: 9px;
             height: 24px;
             line-height: 24px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
             cursor: pointer;
             &:hover{
                 background: #50B4FF;
