@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>select</title>
     <script src="../avalon2.2.5.js"></script>
+    <!-- <script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script> -->
     <script src="/avalon2ui.bundle.js"></script>
     <script src="index.js"></script>
     <link rel="stylesheet" href="../main.css">
@@ -54,14 +55,29 @@
                     selectVm:$id,
                     selectSelfClass:'demo-select2',
                     selectData:data2,
-                    selectDownShow:true,
+                    selectDownShow:false,
                     selectKey:'',
                     selectValue:'value2',
                     selectChange:'value1Change2'
                     }">
             </ms-select>
         </p>
-
+        <br>
+        <br>
+        循环：
+        <span  ms-for="(index,val) in big">
+            <!-- <ms-select 
+                :widget="{
+                    selectVm:'ms-select-demo',
+                    selectSelfClass:'demo-select2',
+                    selectData:val.data,
+                    selectKey:'name',
+                    selectValue:'form.duplex['+index+']',
+                    selectCurrennt:val.name,
+                    selectChange:'value1Change2'
+                    }">
+            </ms-select> -->
+        </span>
     </div>
 </body>
 

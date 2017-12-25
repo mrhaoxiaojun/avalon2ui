@@ -5,11 +5,11 @@
 */
 
 // 分页组件
-// require('./pager/ms-pager.js');
+require('./pager/ms-pager.js');
 // 复选框组件
-// require('./checkbox/ms-checkbox.js');
+require('./checkbox/ms-checkbox.js');
 // 模态框组件
-// require('./dialog/ms-dialog.js');
+require('./dialog/ms-dialog.js');
 // selet组件
 require('./select/ms-select.js');
 // 暴露avalon

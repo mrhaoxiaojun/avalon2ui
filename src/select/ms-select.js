@@ -35,6 +35,7 @@ avalon.component('ms-select', {
             if (value[this.selectKey]) {
                 // 对象赋值
                 this.selectCurrennt = value[this.selectKey];
+                console.log(this.selectValue)
                 avalon.vmodels[this.selectVm][this.selectValue] = value[this.selectKey];
             } else {
                 // 数组赋值
