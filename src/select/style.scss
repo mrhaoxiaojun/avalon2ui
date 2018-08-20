@@ -3,6 +3,8 @@
     width: 98px;
     background: #FFFFFF;
     color: #606068;
+    position: relative;
+    z-index: 99;
     b {
         display: flex;
         box-sizing: border-box;
@@ -68,7 +70,7 @@
         border-top:0;
         box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
         border-radius: 1px;
-        z-index: 10;
+        z-index: 101;
         li {
             display: block;
             box-sizing: border-box;

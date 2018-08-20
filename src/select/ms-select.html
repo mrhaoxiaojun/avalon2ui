@@ -45,6 +45,23 @@
             </ms-select>
         </p>
         <br>
+        <p>
+            拥有默认选项，change回调，自定义宽高，数据类型为，数组对象：
+            <ms-select 
+                :widget="{
+                    selectVm:$id,
+                    selectSelfClass:'demo-select1',
+                    selectw:100,
+                    selecth:28,
+                    selectData:data1,
+                    selectKey:'name',
+                    selectValue:'value1',
+                    selectCurrennt:'亮瞎狗眼',
+                    selectChange:'value1Change'
+                    }">
+            </ms-select>
+        </p>
+        <br>
         <br>
         <button ms-click="change">动态数据</button>
         <br>
@@ -66,7 +83,7 @@
         <br>
         循环：
         <span  ms-for="(index,val) in big">
-            <!-- <ms-select 
+            <ms-select 
                 :widget="{
                     selectVm:'ms-select-demo',
                     selectSelfClass:'demo-select2',
@@ -76,7 +93,7 @@
                     selectCurrennt:val.name,
                     selectChange:'value1Change2'
                     }">
-            </ms-select> -->
+            </ms-select>
         </span>
     </div>
 </body>

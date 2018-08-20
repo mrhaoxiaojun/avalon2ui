@@ -1,9 +1,33 @@
 ## 基于avalon2，写了几个常用组件
 
+（2018.5）此包已经不在维护，感觉大家的使用
+
 ### 调用
 
+*方法一*
+
 - 引用avalon2.2.5版本（avalon2.2.5以上还有其他bug，组件select不能在ms-for循环里）
+
+  `例：<script src="./assets/js/lib/avalon2.2.5.js"></script>`
+
+- 安装执行 
+
+  `npm install avalon2ui`
+
+- 在页面引用
+
+  `require("avalon2ui")`
+
+- 引用src/main.css (可以不调用，此css为我做的页面重置样式)
+
+*方法二*
+
+- 引用avalon2.2.5版本（avalon2.2.5以上还有其他bug，组件select不能在ms-for循环里）
+
+  `例：<script src="./assets/js/lib/avalon2.2.5.js"></script>`
+
 - 引用dist/avalon2ui.bundle.js
+
 - 引用src/main.css (可以不调用，此css为我做的页面重置样式)
 
 ### 组件
@@ -17,7 +41,11 @@
 - pager
 - select
 
-### 用法 
+### 用法
+
+
+
+### 组件及路径解析 
 
 *name:组件名字*
 

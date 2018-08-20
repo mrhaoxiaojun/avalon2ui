@@ -1,5 +1,5 @@
 
-<div :class="['avalon2-select',selectSelfClass]" :css="{width:selectw}">
+<div :class="['avalon2-select',selectSelfClass]" :css="{width:selectw,zIndex:selectDownShow ? 'auto' : 99}">
     <b  :css="{width:selectw,height:selecth}">
         <span class="text pull-left">
             {{selectCurrennt}}

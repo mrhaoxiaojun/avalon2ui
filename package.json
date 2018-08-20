@@ -1,8 +1,12 @@
 {
   "name": "avalon2ui",
-  "version": "1.0.1",
+  "version": "1.0.3",
+  "repository": { 
+    "type" : "git",
+    "url" : "https://github.com/mrhaoxiaojun/avalon2ui"  
+  },
   "description": "avalon ui",
-  "main": "webpack.config.js",
+  "main": "./dist/avalon2ui.bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
